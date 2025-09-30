@@ -1,0 +1,325 @@
+.rasa {
+  color: rgb(79, 4, 4);
+}
+
+.medan {
+  color: rgb(180, 167, 90);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#Beranda {
+  background: url(berandabg.jpg);
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-size: contain;
+  background-attachment: fixed;
+  /* gambar memenuhi area */
+  background-position: center;
+  /* posisi gambar di tengah */
+  background-repeat: no-repeat;
+  /* biar nggak diulang */
+
+  display: flex;
+  justify-content: center;
+  /*horizontal*/
+  align-items: center;
+  /*vertikal*/
+  text-align: center;
+  color: white;
+}
+
+/* Navbar Container */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 5px;
+  z-index: 1000;
+
+
+}
+
+
+.menu li a {
+  text-decoration: none;
+  color: rgb(79, 4, 4);
+  /* warna cokelat */
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+
+  background-color: white;
+  /* bubble putih */
+  padding: 10px 20px;
+  border-radius: 30px;
+  /* bentuk gelembung */
+  transition: all 0.3s ease;
+  animation: bubbleFadeIn 0.6s ease forwards;
+  opacity: 0;
+  transform: scale(0.9);
+  display: inline-block;
+}
+
+.menu li a:hover {
+  color: rgb(139, 69, 19);
+  /* cokelat tua */
+  transform: scale(1.05);
+  /* sedikit membesar */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+section h1 {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 70px;
+  text-shadow: 10px 5px 20px rgb(79, 4, 4);
+
+}
+
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1;
+}
+
+.rasa {
+  color: rgb(255, 255, 255);
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "Carattere", cursive;
+  margin-left: 15px;
+  margin-top: 10px;
+}
+
+
+.medan {
+  color: rgb(255, 255, 255);
+  font-size: 35px;
+  font-weight: bold;
+  font-family: "Carattere", cursive;
+  margin-left: 50px;
+  text-shadow: 2px 2px 0 rgb(179, 162, 11);
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 50px;
+  margin: 0;
+  margin-right: 10%;
+  font-size: 20px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* Navbar Container */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 5px;
+  z-index: 1000;
+  background: none;
+  /* jangan dihapus kalau sudah ada */
+  /* biar background tetap seperti awal */
+}
+
+/* Logo tetap sama, gak perlu diubah */
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 50px;
+  margin: 0;
+  margin-right: 10%;
+  font-size: 20px;
+  font-weight: 15%;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.menu li {
+  position: relative;
+  /* penting supaya dropdown positioning bekerja */
+}
+
+.menu li a {
+  text-decoration: none;
+  color: rgb(79, 4, 4);
+  /* warna cokelat */
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: white;
+  /* bubble putih */
+  padding: 10px 20px;
+  border-radius: 30px;
+  /* bubble rounded */
+  transition: all 0.3s ease;
+  animation: bubbleFadeIn 0.6s ease forwards;
+  opacity: 0;
+  transform: scale(0.9);
+  display: inline-block;
+}
+
+.menu li a:hover {
+  color: rgb(139, 69, 19);
+  /* cokelat tua */
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Dropdown container */
+.dropdown-content {
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  /* Sedikit naik dulu */
+  background-color: white;
+  border-radius: 12px;
+  padding: 10px 0;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  min-width: 180px;
+  z-index: 999;
+
+  opacity: 0;
+  /* Transparan */
+  visibility: hidden;
+  /* Tidak terlihat */
+  pointer-events: none;
+  /* Tidak bisa diklik */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  /* Animasi */
+}
+
+.dropdown:hover .dropdown-content {
+  opacity: 1;
+  /* Muncul */
+  visibility: visible;
+  /* Terlihat */
+  pointer-events: auto;
+  /* Bisa diklik */
+  transform: translateX(-50%) translateY(0);
+  /* Turun ke posisi normal */
+}
+
+
+.dropdown-content li {
+  margin: 5px 0;
+}
+
+.dropdown-content li a {
+  display: block;
+  padding: 10px 20px;
+  color: rgb(139, 69, 19);
+  text-decoration: none;
+  transition: 0.3s;
+  border-radius: 30px;
+}
+
+.dropdown-content li a:hover {
+  background-color: rgb(139, 69, 19);
+  color: white;
+  transform: translateX(8px);
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown>a::after {
+  content: " ▼";
+  /* tanda panah ke bawah */
+  font-size: 12px;
+  margin-left: 5px;
+  color: #8B4513;
+  /* warna cokelat */
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.dropdown:hover>a::after {
+  transform: rotate(180deg);
+}
+
+.medanpunyarasa {
+  width: 100%;
+  height: 100vh;
+  /*tinggi*/
+  background-image: url("img-home.jpg");
+  background-size: cover;
+  /* gambar memenuhi area */
+  background-position: center;
+  /* posisi gambar di tengah */
+  background-repeat: no-repeat;
+  /* biar nggak diulang */
+  margin: 0;
+  padding: 0;
+}
+
+/*img batak*/
+#Batak img {
+  width: 100%;
+  height: auto;
+  display: block;
+  /* Menghilangkan space bawah gambar */
+}
+
+/* Untuk memberi padding/margin sesuai kebutuhan */
+#Batak {
+  padding: 0;
+  margin: 0;
+}
+
+.overlay1-content {
+  max-width: 100%;
+  /* agar container tidak membatasi lebar gambar */
+}
+
+/*img batak*/
+#Melayu img {
+  width: 100%;
+  height: auto;
+  display: block;
+  /* Menghilangkan space bawah gambar */
+}
+
+/* Untuk memberi padding/margin sesuai kebutuhan */
+#Melayu {
+  padding: 0;
+  margin: 0;
+}
+
+.overlay2-content {
+  max-width: 100%;
+  /* agar container tidak membatasi lebar gambar */
+}
+
+
+@keyframes bubbleFadeIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
